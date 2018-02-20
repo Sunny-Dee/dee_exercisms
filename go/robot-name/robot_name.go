@@ -28,8 +28,8 @@ func (r *Robot) Reset() {
 }
 
 func (r *Robot) generateName() {
-	letters := []rune("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-	r.RobotName = string(letters[rand.Int()%(len(letters)-1)]) +
-		string(letters[rand.Int()%(len(letters)-1)]) +
-		strconv.FormatInt(int64(rand.Intn(max-min)+min), base)
+	a := string(rand.Intn(90-65) + 65)
+	b := string(rand.Intn(90-65) + 65)
+
+	r.RobotName = a + b + strconv.FormatInt(int64(rand.Intn(max-min)+min), base)
 }
